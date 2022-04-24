@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 entity PWM_Decoder_tb is
 
---Port()TOPP3
+--Port()
 
 end PWM_Decoder_tb;
 

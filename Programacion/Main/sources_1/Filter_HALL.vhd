@@ -4,7 +4,7 @@ use IEEE.std_logic_arith.all;
  
 entity Filter_HALL is
   Generic(
-  Delay: integer:= 10            -- Delay*10^3
+  Delay: integer:= 1            -- Delay*10^3
   );
   Port ( 
   CLK: in std_logic;
@@ -42,7 +42,7 @@ begin
     previnput<=SYNC_OUT_s;
         if previnput/=SYNC_OUT_s then
             count<=(others=>'0');
-        elsif unsigned(count)> conv_unsigned(Delay*1E3,32)-1 then
+        elsif unsigned(count)> conv_unsigned(Delay*1E1,32)-1 then
             OUTPUT<=SYNC_OUT_s;
         else
             count<=unsigned(count)+1;

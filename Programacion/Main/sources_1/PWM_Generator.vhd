@@ -6,7 +6,7 @@ use IEEE.numeric_std.all;
 
 entity PWM_Generator is
 Generic(
-    Frecuencies: integer range 1000 to 2500:= 2000;
+    Frecuencies: integer range 1000 to 2500:= 1000;
     DeadBand: integer range 3 to 10:=5
 );
   Port ( 

@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Top_PWM is
 Generic(
-    Frecuencies: integer range 1000 to 2500:= 2000;
+    Frecuencies: integer range 1000 to 2500:= 1000;
     DeadBand: integer range 3 to 10:=5;
     Delay_States: integer range 4 to 10:=4
 );
@@ -50,7 +50,7 @@ END COMPONENT;
 
 COMPONENT PWM_Generator
 Generic(
-    Frecuencies: integer range 1000 to 2500:= 2000;
+    Frecuencies: integer range 1000 to 2500:= 1000;
     DeadBand: integer range 3 to 10:=5
 );
   Port ( 

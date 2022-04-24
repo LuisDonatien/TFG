@@ -1,9 +1,9 @@
-library IEEE;--modficaion Final 12345
+library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 
 entity Top_PWM_tb is
---  Port ( );TPOP1
+--  Port ( );
 end Top_PWM_tb;
 
 architecture Behavioral of Top_PWM_tb is

@@ -1,7 +1,0 @@
-Running: xsim.dir/PWM_Generator_tb_behav/xsimk.exe -simmode gui -wdb PWM_Generator_tb_behav.wdb -simrunnum 0 -socket 65073
-Design successfully loaded
-Design Loading Memory Usage: 5896 KB (Peak: 5896 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 14504 KB (Peak: 14504 KB)
-Simulation CPU Usage: 10718 ms
