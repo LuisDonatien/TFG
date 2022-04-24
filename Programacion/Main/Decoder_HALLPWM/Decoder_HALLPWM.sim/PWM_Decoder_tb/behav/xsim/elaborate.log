@@ -1,0 +1,7 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programas/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 25433b60bff84680a64a95c6e7020244 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot PWM_Decoder_tb_behav xil_defaultlib.PWM_Decoder_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-3353] formal port 'pwm_inl' has no actual or default value [D:/TFG_TCL/Decoder_HALLV1.1/sources_1/PWM_Decoder.vhd:17]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit pwm_decoder_tb in library work failed.
