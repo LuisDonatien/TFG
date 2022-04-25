@@ -20,7 +20,7 @@ architecture Behavioral of PWM_Generator_tb is
 COMPONENT PWM_Generator
 Generic(
     Frecuencies: integer range 1000 to 2500:= 2500;
-    DeadBand: integer range 3 to 10:=3
+    DeadBand: integer range 3 to 10:=4
 );
   Port ( 
   CLK:          in std_logic;
@@ -56,5 +56,6 @@ end process;
 RESET<='1', '0' after 1ms, '1' after 1ms + 200 ns, '0' after 2 ms, '1' after 13 ms ,'0' after 13ms + 20ns;
 
 ENABLE_DUAL<='0';
-Duty<=std_logic_vector(to_unsigned(400,32)),std_logic_vector(to_unsigned(1000,32)) after 10ms +986 us,std_logic_vector(to_unsigned(2500,32)) after 12ms + 500ns, std_logic_vector(to_unsigned(0,32)) after 16ms + 500ns, std_logic_vector(to_unsigned(1500,32)) after 18ms + 500ns ;
+Duty<=std_logic_vector(to_unsigned(400,32)),std_logic_vector(to_unsigned(1000,32)) after 10ms +986 us,std_logic_vector(to_unsigned(2500,32)) after 12ms + 500ns, std_logic_vector(to_unsigned(0,32)) after 17ms + 350us+10ns, 
+std_logic_vector(to_unsigned(2446,32)) after 17ms +380us , std_logic_vector(to_unsigned(5,32)) after 18ms + 500ns ,std_logic_vector(to_unsigned(1500,32)) after 20ms + 500ns ;
 end Behavioral;
