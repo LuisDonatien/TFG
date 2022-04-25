@@ -19,7 +19,8 @@ architecture Behavioral of PWM_Generator_tb is
 
 COMPONENT PWM_Generator
 Generic(
-    Frecuencies: integer range 1000 to 2500:= 2500
+    Frecuencies: integer range 1000 to 2500:= 2500;
+    DeadBand: integer range 3 to 10:=3
 );
   Port ( 
   CLK:          in std_logic;

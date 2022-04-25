@@ -25,7 +25,7 @@ architecture Behavioral of Top_PWM_tb is
 COMPONENT Top_PWM
 Generic(
     Frecuencies: integer range 1000 to 2500:= 2000;
-    DeadBand: integer range 3 to 10:=4;
+    DeadBand: integer range 3 to 10:=3;
     Delay_States: integer range 4 to 10:=4
 );
   Port ( 
@@ -51,7 +51,8 @@ END COMPONENT;
     constant PWMIN: time :=10 us; --Clock period PWM
 begin
 
-uut: Top_PWM PORT MAP(
+uut: Top_PWM 
+PORT MAP(
     CLK             =>CLK,
     ENABLE_DUAL     =>ENABLE_DUAL,
     RESET           =>RESET,

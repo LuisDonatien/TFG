@@ -38,7 +38,7 @@ begin
         elsif counter_PWM=to_unsigned(0,32)+1 then
             PWM<='1';
             counter_PWM<=to_unsigned(Frecuencies,32);
-            counter_DelayH<=(others=>'0');
+            counter_DelayH<=counter_DelayH(DeadBand-1 downto 0) & '1';
             counter_DelayL<=(others=>'0');
         elsif counter_PWM>Frecuencies-unsigned(Duty) then
             PWM<='1';
@@ -65,7 +65,7 @@ end process;
 --    end if;
 --end process;
 
-PWM_H<=counter_DelayH(DeadBand-1);
+PWM_H<=counter_DelayH(DeadBand);
 PWM_L<=counter_DelayL(DeadBand);
 --PWM_L<='0';
 

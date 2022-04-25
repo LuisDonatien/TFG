@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Top_PWM is
 Generic(
     Frecuencies: integer range 1000 to 2500:= 1000;
-    DeadBand: integer range 3 to 10:=5;
+    DeadBand: integer range 3 to 10:=3;
     Delay_States: integer range 4 to 10:=4
 );
   Port ( 
@@ -84,7 +84,12 @@ uut_PWM_Decoder: PWM_Decoder PORT MAP(
     ERROR       =>ERROR
 );
 
-uut_PWM_Generator: PWM_Generator PORT MAP(
+uut_PWM_Generator: PWM_Generator 
+GENERIC MAP(
+    Frecuencies =>Frecuencies,
+    DeadBand    =>DeadBand
+)
+PORT MAP(
   CLK           =>CLK,
   ENABLE_DUAL   =>'0',
   RESET         =>RESET,

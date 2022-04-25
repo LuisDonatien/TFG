@@ -3,6 +3,11 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity Top is
+  Generic(
+    PWM_Frecuencies: integer range 1000 to 2500:= 1000;
+    PWM_DeadBand: integer range 3 to 10:=3;
+    Delay_States: integer range 4 to 10:=4  
+  );
   Port ( 
     CLK:          in std_logic;
     RESET:        in std_logic;  
@@ -80,7 +85,12 @@ signal SENSE_s,ERROR_s: std_logic;
 signal HALL_s: std_logic_vector(2 downto 0);
 begin
 
-uu0_Top_PWM: Top_PWM PORT MAP(
+uu0_Top_PWM: Top_PWM 
+GENERIC MAP(
+    Frecuencies =>PWM_Frecuencies,
+    DeadBand    =>PWM_DeadBand
+)
+PORT MAP(
     CLK             =>CLK,
     ENABLE_DUAL     =>'0',
     RESET           =>RESET,
