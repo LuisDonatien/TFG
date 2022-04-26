@@ -1,0 +1,340 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Apr 26 18:40:50 2022
+# Process ID: 5468
+# Current directory: C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.runs/synth_1
+# Command line: vivado.exe -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
+# Log file: C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.runs/synth_1/Top.vds
+# Journal file: C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Top.tcl -notrace
+Command: synth_design -top Top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 7472
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1081.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Top' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top.vhd:33]
+	Parameter PWM_Frecuencies bound to: 1000 - type: integer 
+	Parameter PWM_DeadBand bound to: 3 - type: integer 
+	Parameter Delay_States bound to: 4 - type: integer 
+	Parameter Frecuencies bound to: 1000 - type: integer 
+	Parameter DeadBand bound to: 3 - type: integer 
+	Parameter Delay_States bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'Top_PWM' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top_PWM.vhd:4' bound to instance 'uu0_Top_PWM' of component 'Top_PWM' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top.vhd:88]
+INFO: [Synth 8-638] synthesizing module 'Top_PWM' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top_PWM.vhd:28]
+	Parameter Frecuencies bound to: 1000 - type: integer 
+	Parameter DeadBand bound to: 3 - type: integer 
+	Parameter Delay_States bound to: 5 - type: integer 
+	Parameter Delay_States bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'PWM_Decoder' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Decoder.vhd:6' bound to instance 'uut_PWM_Decoder' of component 'PWM_Decoder' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top_PWM.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'PWM_Decoder' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Decoder.vhd:28]
+	Parameter Delay_States bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'PWM_Decoder' (1#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Decoder.vhd:28]
+	Parameter Frecuencies bound to: 1000 - type: integer 
+	Parameter DeadBand bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'PWM_Generator' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Generator.vhd:7' bound to instance 'uut_PWM_Generator' of component 'PWM_Generator' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top_PWM.vhd:87]
+INFO: [Synth 8-638] synthesizing module 'PWM_Generator' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Generator.vhd:22]
+	Parameter Frecuencies bound to: 1000 - type: integer 
+	Parameter DeadBand bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'PWM_Generator' (2#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Generator.vhd:22]
+INFO: [Synth 8-256] done synthesizing module 'Top_PWM' (3#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top_PWM.vhd:28]
+	Parameter Delay bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'Filter_HALL' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd:5' bound to instance 'uut1_Filter' of component 'Filter_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top.vhd:109]
+INFO: [Synth 8-638] synthesizing module 'Filter_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd:16]
+	Parameter Delay bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'SYNCHRNZR' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/SYNCHRNZR.vhd:5' bound to instance 'uut' of component 'SYNCHRNZR' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd:30]
+INFO: [Synth 8-638] synthesizing module 'SYNCHRNZR' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/SYNCHRNZR.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'SYNCHRNZR' (4#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/SYNCHRNZR.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'Filter_HALL' (5#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd:16]
+	Parameter Delay bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'Filter_HALL' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd:5' bound to instance 'uut2_Filter' of component 'Filter_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top.vhd:114]
+	Parameter Delay bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'Filter_HALL' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd:5' bound to instance 'uut3_Filter' of component 'Filter_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top.vhd:119]
+INFO: [Synth 8-3491] module 'TOP_RPS_DISPLAY' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_RPS_DISPLAY.vhd:4' bound to instance 'uut4' of component 'TOP_RPS_DISPLAY' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top.vhd:125]
+INFO: [Synth 8-638] synthesizing module 'TOP_RPS_DISPLAY' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_RPS_DISPLAY.vhd:16]
+	Parameter Count_Size bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'top_s' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd:6' bound to instance 'uut_0' of component 'top_s' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_RPS_DISPLAY.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'top_s' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd:20]
+	Parameter Count_Size bound to: 8 - type: integer 
+	Parameter Count_Size bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'Counter_HALL' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Counter_HALL.vhd:5' bound to instance 'uut_0' of component 'Counter_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'Counter_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Counter_HALL.vhd:22]
+	Parameter Count_Size bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'FSM_HALL' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/FSM_HALL.vhd:6' bound to instance 'uut_0' of component 'FSM_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Counter_HALL.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'FSM_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/FSM_HALL.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'FSM_HALL' (6#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/FSM_HALL.vhd:19]
+	Parameter SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'CntSteps_HALL' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/CntSteps_HALL.vhd:6' bound to instance 'uut_1' of component 'CntSteps_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Counter_HALL.vhd:65]
+INFO: [Synth 8-638] synthesizing module 'CntSteps_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/CntSteps_HALL.vhd:18]
+	Parameter SIZE bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CntSteps_HALL' (7#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/CntSteps_HALL.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'Counter_HALL' (8#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Counter_HALL.vhd:22]
+	Parameter Delay bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'Filter_HALL' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd:5' bound to instance 'Filters' of component 'Filter_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd:102]
+	Parameter Delay bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'Filter_HALL' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd:5' bound to instance 'Filters' of component 'Filter_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd:102]
+	Parameter Delay bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'Filter_HALL' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd:5' bound to instance 'Filters' of component 'Filter_HALL' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd:102]
+	Parameter TIMES bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'Temporizador' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Temporizador.vhd:5' bound to instance 'uut_2' of component 'Temporizador' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd:110]
+INFO: [Synth 8-638] synthesizing module 'Temporizador' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Temporizador.vhd:19]
+	Parameter TIMES bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Temporizador' (9#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Temporizador.vhd:19]
+	Parameter Count_Size bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'Compare' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Compare.vhd:4' bound to instance 'uut_3' of component 'Compare' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'Compare' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Compare.vhd:17]
+	Parameter Count_Size bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Compare' (10#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Compare.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'top_s' (11#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd:20]
+INFO: [Synth 8-3491] module 'SEGMENT_TOP' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/SEGMENT_TOP.vhd:6' bound to instance 'uut_1' of component 'SEGMENT_TOP' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_RPS_DISPLAY.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'SEGMENT_TOP' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/SEGMENT_TOP.vhd:16]
+INFO: [Synth 8-3491] module 'ConvertBCD' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/ConvertBCD.vhd:6' bound to instance 'uut0' of component 'ConvertBCD' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/SEGMENT_TOP.vhd:46]
+INFO: [Synth 8-638] synthesizing module 'ConvertBCD' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/ConvertBCD.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'ConvertBCD' (12#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/ConvertBCD.vhd:14]
+INFO: [Synth 8-3491] module 'Decoder_Display' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Decoder_Display.vhd:5' bound to instance 'uut1' of component 'Decoder_Display' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/SEGMENT_TOP.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'Decoder_Display' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Decoder_Display.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'Decoder_Display' (13#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Decoder_Display.vhd:12]
+INFO: [Synth 8-3491] module 'Decoder_Display' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/Decoder_Display.vhd:5' bound to instance 'uut2' of component 'Decoder_Display' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/SEGMENT_TOP.vhd:57]
+INFO: [Synth 8-3491] module 'CLOCK_DISPLAY' declared at 'C:/GitHubTFG/TFG/Programacion/Main/sources_1/CLOCK_DISPLAY.vhd:6' bound to instance 'uut3' of component 'CLOCK_DISPLAY' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/SEGMENT_TOP.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'CLOCK_DISPLAY' [C:/GitHubTFG/TFG/Programacion/Main/sources_1/CLOCK_DISPLAY.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'CLOCK_DISPLAY' (14#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/CLOCK_DISPLAY.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'SEGMENT_TOP' (15#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/SEGMENT_TOP.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'TOP_RPS_DISPLAY' (16#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_RPS_DISPLAY.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'Top' (17#1) [C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top.vhd:33]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1081.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1081.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1081.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1081.727 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/GitHubTFG/TFG/Programacion/Main/constraints/Basys-3-Master.xdc]
+Finished Parsing XDC File [C:/GitHubTFG/TFG/Programacion/Main/constraints/Basys-3-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/GitHubTFG/TFG/Programacion/Main/constraints/Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1194.555 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1194.555 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1194.555 ; gain = 112.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1194.555 ; gain = 112.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1194.555 ; gain = 112.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1194.555 ; gain = 112.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
+	   2 Input   22 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               22 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 23    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 1     
+	   2 Input   22 Bit        Muxes := 2     
+	   6 Input   10 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 5     
+	   4 Input    3 Bit        Muxes := 20    
+	   2 Input    3 Bit        Muxes := 12    
+	   7 Input    3 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 12    
+	   6 Input    1 Bit        Muxes := 3     
+	   7 Input    1 Bit        Muxes := 2     
+	   8 Input    1 Bit        Muxes := 3     
+	   4 Input    1 Bit        Muxes := 1     
+	  11 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1194.555 ; gain = 112.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:09 . Memory (MB): peak = 1194.555 ; gain = 112.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:07 ; elapsed = 00:01:09 . Memory (MB): peak = 1194.555 ; gain = 112.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1202.508 ; gain = 120.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:19 ; elapsed = 00:01:21 . Memory (MB): peak = 1208.301 ; gain = 126.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:19 ; elapsed = 00:01:21 . Memory (MB): peak = 1208.301 ; gain = 126.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:19 ; elapsed = 00:01:21 . Memory (MB): peak = 1208.301 ; gain = 126.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:19 ; elapsed = 00:01:21 . Memory (MB): peak = 1208.301 ; gain = 126.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:19 ; elapsed = 00:01:21 . Memory (MB): peak = 1208.301 ; gain = 126.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:19 ; elapsed = 00:01:21 . Memory (MB): peak = 1208.301 ; gain = 126.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                     | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Top         | uut4/uut_0/uut_1[0].Filters/uut/SYNC_OUT_reg | 3      | 3     | NO           | NO                 | YES               | 3      | 0       | 
++------------+----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    82|
+|3     |LUT1   |    41|
+|4     |LUT2   |    87|
+|5     |LUT3   |    19|
+|6     |LUT4   |    59|
+|7     |LUT5   |    58|
+|8     |LUT6   |    91|
+|9     |SRL16E |     3|
+|10    |FDCE   |    23|
+|11    |FDRE   |   320|
+|12    |FDSE   |     6|
+|13    |IBUF   |     8|
+|14    |OBUF   |    21|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:19 ; elapsed = 00:01:21 . Memory (MB): peak = 1208.301 ; gain = 126.574
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:00 ; elapsed = 00:01:16 . Memory (MB): peak = 1208.301 ; gain = 13.746
+Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:01:22 . Memory (MB): peak = 1208.301 ; gain = 126.574
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1218.258 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 82 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1218.258 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+71 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:37 ; elapsed = 00:01:43 . Memory (MB): peak = 1218.258 ; gain = 136.531
+INFO: [Common 17-1381] The checkpoint 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.runs/synth_1/Top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 26 18:42:41 2022...

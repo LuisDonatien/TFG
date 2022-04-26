@@ -54,13 +54,13 @@ estate_register : process(CLK,RESET)
         else
       --To save the actual state in case of a change in nxt_state.                  
     	estate<= nxt_estate;  --Notify change state.           
-            if nxt_estate/=estate then
-                delay<=to_unsigned(Delay_States,9);
-            elsif delay>0 then
-                delay<=delay-1;
-            else
-                delay<=(others=>'0');
-            end if;      
+        --    if nxt_estate/=estate then
+        --        delay<=to_unsigned(Delay_States,9);
+        --    elsif delay>0 then
+        --        delay<=delay-1;
+        --    else
+        --        delay<=(others=>'0');
+        --    end if;      
         end if;
    	end if;
    end process;
@@ -71,62 +71,62 @@ estate_register : process(CLK,RESET)
     
        	case estate is	
         	when S0_101 =>
-        	        if A='0' AND B='0' AND C='1' then      ---Stay on same state
+        	        if A='0' AND B='0' AND C='1' then      
                         nxt_estate <= S5_001;
                     elsif A='1' AND B='0' AND C='0' then
                         nxt_estate <= S1_100;
-                    elsif A='1' AND B='0' AND C='1' then
+                    elsif A='1' AND B='0' AND C='1' then    ---Stay on same state
                         nxt_estate <=S0_101;
                     else
                         nxt_estate <=S6_ERROR;
                     end if;
 
             when S1_100 =>
-        	        if A='1' AND B='0' AND C='1' then      ---Stay on same state
+        	        if A='1' AND B='0' AND C='1' then      
                         nxt_estate <= S0_101;
                     elsif A='1' AND B='1' AND C='0' then
                         nxt_estate <= S2_110;
-                    elsif A='1' AND B='0' AND C='0' then
+                    elsif A='1' AND B='0' AND C='0' then    ---Stay on same state
                         nxt_estate <=S1_100;
                     else
                         nxt_estate <=S6_ERROR;
                     end if;
             when S2_110 =>           
-        	        if A='1' AND B='0' AND C='0' then      ---Stay on same state
+        	        if A='1' AND B='0' AND C='0' then      
                         nxt_estate <= S1_100;
                     elsif A='0' AND B='1' AND C='0' then
                         nxt_estate <= S3_010;
-                    elsif A='1' AND B='1' AND C='0' then
+                    elsif A='1' AND B='1' AND C='0' then    ---Stay on same state
                         nxt_estate <=S2_110;
                     else
                         nxt_estate <=S6_ERROR;
                     end if;
             when S3_010 =>
-        	        if A='1' AND B='1' AND C='0' then      ---Stay on same state
+        	        if A='1' AND B='1' AND C='0' then      
                         nxt_estate <= S2_110;
                     elsif A='0' AND B='1' AND C='1' then
                         nxt_estate <= S4_011;
-                    elsif A='0' AND B='1' AND C='0' then
+                    elsif A='0' AND B='1' AND C='0' then    ---Stay on same state
                         nxt_estate <=S3_010;
                     else
                         nxt_estate <=S6_ERROR;
                     end if;            
             when S4_011 =>           
-        	        if A='0' AND B='1' AND C='0' then      ---Stay on same state
+        	        if A='0' AND B='1' AND C='0' then      
                         nxt_estate <= S3_010;
                     elsif A='0' AND B='0' AND C='1' then
                         nxt_estate <= S5_001;
-                    elsif A='0' AND B='1' AND C='1' then
+                    elsif A='0' AND B='1' AND C='1' then    ---Stay on same state
                         nxt_estate <=S4_011;
                     else
                         nxt_estate <=S6_ERROR;
                     end if;
             when S5_001 =>
-        	        if A='0' AND B='1' AND C='1' then      ---Stay on same state
+        	        if A='0' AND B='1' AND C='1' then     
                         nxt_estate <= S4_011;
                     elsif A='1' AND B='0' AND C='1' then
                         nxt_estate <= S0_101;
-                    elsif A='0' AND B='0' AND C='1' then
+                    elsif A='0' AND B='0' AND C='1' then    ---Stay on same state
                         nxt_estate <=S5_001;
                     else
                         nxt_estate <=S6_ERROR;
@@ -166,13 +166,13 @@ begin
     PWM_CL  <='0';  
     --Error--
     ERROR<='1';
-    elsif delay>0 then
-    PWM_AH  <='0';
-    PWM_AL  <='0';
-    PWM_BH  <='0';
-    PWM_BL  <='0';
-    PWM_CH  <='0';
-    PWM_CL  <='0';     
+--    elsif delay>0 then
+--    PWM_AH  <='0';
+--    PWM_AL  <='0';
+--    PWM_BH  <='0';
+--    PWM_BL  <='0';
+--    PWM_CH  <='0';
+--    PWM_CL  <='0';     
     
     elsif estate=S0_101 then
     PWM_AH  <='0';
