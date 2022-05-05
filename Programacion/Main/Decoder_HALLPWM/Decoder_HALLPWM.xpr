@@ -6,7 +6,7 @@
 <Project Version="7" Minor="49" Path="C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="303f1399fc174ae3a2b63561ce0d3b98"/>
+    <Option Name="Id" Val="30526ff7a2d74006b4c77b280cb2f79d"/>
     <Option Name="Part" Val="xc7a35tcpg236-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -27,7 +27,8 @@
     <Option Name="TargetLanguage" Val="VHDL"/>
     <Option Name="BoardPart" Val="digilentinc.com:basys3:part0:1.1"/>
     <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../../../Users/luisw/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store"/>
-    <Option Name="ActiveSimSet" Val="Top_PWM_tb"/>
+    <Option Name="SourceMgmtMode" Val="DisplayOnly"/>
+    <Option Name="ActiveSimSet" Val="PWM_Decoder_tb"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
@@ -40,7 +41,7 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="basys3"/>
-    <Option Name="WTXSimLaunchSim" Val="118"/>
+    <Option Name="WTXSimLaunchSim" Val="141"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -69,6 +70,27 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/../sources_1/PID_TIMER.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../sources_1/PID_TOPSENSOR.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../sources_1/TOP_VP.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../sources_1/CLOCK_DISPLAY.vhd">
         <FileInfo>
           <Attr Name="Library" Val="xil_defaultlib"/>
@@ -184,13 +206,21 @@
       <File Path="$PPRDIR/../sources_1/Top.vhd">
         <FileInfo>
           <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../sources_1/PID_HALLFSM.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="Top"/>
+        <Option Name="TopModule" Val="TOP_VP"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -207,6 +237,7 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="Top"/>
@@ -228,6 +259,7 @@
       </Config>
     </FileSet>
     <FileSet Name="PWM_Decoder_tb" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/PWM_Decoder_tb">
+      <Filter Type="Srcs"/>
       <File Path="$PPRDIR/../sim/sim_1/new/PWM_Decoder_tb.vhd">
         <FileInfo>
           <Attr Name="Library" Val="xil_defaultlib"/>
@@ -250,6 +282,7 @@
       </Config>
     </FileSet>
     <FileSet Name="PWM_Generator" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/PWM_Generator">
+      <Filter Type="Srcs"/>
       <File Path="$PPRDIR/../sim/sim_1/new/PWM_Generator_tb.vhd">
         <FileInfo>
           <Attr Name="Library" Val="xil_defaultlib"/>
@@ -272,6 +305,7 @@
       </Config>
     </FileSet>
     <FileSet Name="Top_PWM_tb" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/Top_PWM_tb">
+      <Filter Type="Srcs"/>
       <File Path="$PPRDIR/../sim/sim_1/new/Top_PWM_tb.vhd">
         <FileInfo>
           <Attr Name="Library" Val="xil_defaultlib"/>
@@ -282,6 +316,43 @@
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="Top_PWM_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SelectedSimModel" Val="rtl"/>
+        <Option Name="PamDesignTestbench" Val=""/>
+        <Option Name="PamDutBypassFile" Val="xil_dut_bypass"/>
+        <Option Name="PamSignalDriverFile" Val="xil_bypass_driver"/>
+        <Option Name="PamPseudoTop" Val="pseudo_tb"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="PID_SENSE_tb" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/PID_SENSE_tb">
+      <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/../sim/sim_1/new/PID_TOPSENSOR_tb.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../sim/sim_1/new/PID_TIMER_tb.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../sim/sim_1/new/PID_HALLFSM_tb.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="PID_TOPSENSOR_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
@@ -315,23 +386,17 @@
   <Runs Version="1" Minor="11">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles>
-        <RQSFilePath/>
-      </RQSFiles>
+      <RQSFiles/>
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -345,9 +410,7 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles>
-        <RQSFilePath/>
-      </RQSFiles>
+      <RQSFiles/>
     </Run>
   </Runs>
   <Board>

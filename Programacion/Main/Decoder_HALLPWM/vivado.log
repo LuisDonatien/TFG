@@ -1,0 +1,437 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue May  3 19:48:50 2022
+# Process ID: 13176
+# Current directory: C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10656 C:\GitHubTFG\TFG\Programacion\Main\Decoder_HALLPWM\Decoder_HALLPWM.xpr
+# Log file: C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/vivado.log
+# Journal file: C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.srcs/sources_1'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programas/Vivado/Vivado/2020.1/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 1035.055 ; gain = 0.000
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Top_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_TIMER.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PID_TIMER'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_TOPSENSOR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PID_TOPSENSOR'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_VP.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TOP_VP'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/CLOCK_DISPLAY.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CLOCK_DISPLAY'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/CntSteps_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CntSteps_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Compare.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Compare'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/ConvertBCD.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ConvertBCD'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Counter_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Counter_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Decoder_Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Decoder_Display'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/FSM_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FSM_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Filter_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PWM_Decoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Generator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PWM_Generator'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/SEGMENT_TOP.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SEGMENT_TOP'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/SYNCHRNZR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SYNCHRNZR'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_RPS_DISPLAY.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TOP_RPS_DISPLAY'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Temporizador.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Temporizador'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top_PWM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_PWM'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_s'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_HALLFSM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PID_HALLFSM'
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/sim_1/behav/xsim'
+"xelab -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Top_behav xil_defaultlib.Top -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programas/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Top_behav xil_defaultlib.Top -log elaborate.log 
+Using 2 slave threads.
+ERROR: [XSIM 43-3225] Cannot find design unit xil_defaultlib.Top in library work located at xsim.dir/work.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1054.176 ; gain = 18.082
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation -simset [get_filesets PWM_Generator ]
+Command: launch_simulation -simset PWM_Generator
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'PWM_Generator'
+INFO: [SIM-utils-54] Inspecting design source files for 'PWM_Generator_tb' in fileset 'PWM_Generator'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'PWM_Generator'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+"xvhdl --incr --relax -prj PWM_Generator_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_TIMER.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PID_TIMER'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_TOPSENSOR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PID_TOPSENSOR'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_VP.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TOP_VP'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/CLOCK_DISPLAY.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CLOCK_DISPLAY'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/CntSteps_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CntSteps_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Compare.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Compare'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/ConvertBCD.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ConvertBCD'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Counter_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Counter_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Decoder_Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Decoder_Display'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/FSM_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FSM_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Filter_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PWM_Decoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Generator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PWM_Generator'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/SEGMENT_TOP.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SEGMENT_TOP'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/SYNCHRNZR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SYNCHRNZR'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_RPS_DISPLAY.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TOP_RPS_DISPLAY'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Temporizador.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Temporizador'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top_PWM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_PWM'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_s'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_HALLFSM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PID_HALLFSM'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sim/sim_1/new/PWM_Generator_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PWM_Generator_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+"xelab -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot PWM_Generator_tb_behav xil_defaultlib.PWM_Generator_tb -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programas/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot PWM_Generator_tb_behav xil_defaultlib.PWM_Generator_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.PWM_Generator [\PWM_Generator(frecuencies=2500,...]
+Compiling architecture behavioral of entity xil_defaultlib.pwm_generator_tb
+Built simulation snapshot PWM_Generator_tb_behav
+
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim/xsim.dir/PWM_Generator_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue May  3 19:51:03 2022...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1054.176 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "PWM_Generator_tb_behav -key {Behavioral:PWM_Generator:Functional:PWM_Generator_tb} -tclbatch {PWM_Generator_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source PWM_Generator_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'PWM_Generator_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1054.176 ; gain = 0.000
+run 50 ms
+run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 1057.645 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -simset [get_filesets PWM_Generator ]
+Command: launch_simulation -simset PWM_Generator
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'PWM_Generator'
+INFO: [SIM-utils-54] Inspecting design source files for 'PWM_Generator_tb' in fileset 'PWM_Generator'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'PWM_Generator'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+"xvhdl --incr --relax -prj PWM_Generator_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Generator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PWM_Generator'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+"xelab -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot PWM_Generator_tb_behav xil_defaultlib.PWM_Generator_tb -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programas/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot PWM_Generator_tb_behav xil_defaultlib.PWM_Generator_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.PWM_Generator [\PWM_Generator(frecuencies=2500,...]
+Compiling architecture behavioral of entity xil_defaultlib.pwm_generator_tb
+Built simulation snapshot PWM_Generator_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "PWM_Generator_tb_behav -key {Behavioral:PWM_Generator:Functional:PWM_Generator_tb} -tclbatch {PWM_Generator_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source PWM_Generator_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'PWM_Generator_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1066.758 ; gain = 0.000
+run 50 ms
+run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1066.758 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -simset [get_filesets PWM_Generator ]
+Command: launch_simulation -simset PWM_Generator
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'PWM_Generator'
+INFO: [SIM-utils-54] Inspecting design source files for 'PWM_Generator_tb' in fileset 'PWM_Generator'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'PWM_Generator'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+"xvhdl --incr --relax -prj PWM_Generator_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+"xelab -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot PWM_Generator_tb_behav xil_defaultlib.PWM_Generator_tb -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programas/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot PWM_Generator_tb_behav xil_defaultlib.PWM_Generator_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Generator/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "PWM_Generator_tb_behav -key {Behavioral:PWM_Generator:Functional:PWM_Generator_tb} -tclbatch {PWM_Generator_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source PWM_Generator_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'PWM_Generator_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1082.336 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -simset [get_filesets PWM_Decoder_tb ]
+Command: launch_simulation -simset PWM_Decoder_tb
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Decoder_tb/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'PWM_Decoder_tb'
+INFO: [SIM-utils-54] Inspecting design source files for 'PWM_Decoder_tb' in fileset 'PWM_Decoder_tb'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'PWM_Decoder_tb'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Decoder_tb/behav/xsim'
+"xvhdl --incr --relax -prj PWM_Decoder_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_TIMER.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PID_TIMER'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_TOPSENSOR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PID_TOPSENSOR'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_VP.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TOP_VP'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/CLOCK_DISPLAY.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CLOCK_DISPLAY'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/CntSteps_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CntSteps_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Compare.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Compare'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/ConvertBCD.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ConvertBCD'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Counter_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Counter_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Decoder_Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Decoder_Display'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/FSM_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FSM_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Filter_HALL'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PWM_Decoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Generator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PWM_Generator'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/SEGMENT_TOP.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SEGMENT_TOP'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/SYNCHRNZR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SYNCHRNZR'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_RPS_DISPLAY.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TOP_RPS_DISPLAY'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Temporizador.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Temporizador'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top_PWM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_PWM'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_s'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_HALLFSM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PID_HALLFSM'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sim/sim_1/new/PWM_Decoder_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PWM_Decoder_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Decoder_tb/behav/xsim'
+"xelab -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot PWM_Decoder_tb_behav xil_defaultlib.PWM_Decoder_tb -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programas/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot PWM_Decoder_tb_behav xil_defaultlib.PWM_Decoder_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-3353] formal port 'pwm_inl' has no actual or default value [C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Decoder.vhd:17]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit pwm_decoder_tb in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Decoder_tb/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Decoder_tb/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation -simset [get_filesets PWM_Decoder_tb ]
+Command: launch_simulation -simset PWM_Decoder_tb
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Decoder_tb/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'PWM_Decoder_tb'
+INFO: [SIM-utils-54] Inspecting design source files for 'PWM_Decoder_tb' in fileset 'PWM_Decoder_tb'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'PWM_Decoder_tb'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Decoder_tb/behav/xsim'
+"xvhdl --incr --relax -prj PWM_Decoder_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/GitHubTFG/TFG/Programacion/Main/sim/sim_1/new/PWM_Decoder_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'PWM_Decoder_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Decoder_tb/behav/xsim'
+"xelab -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot PWM_Decoder_tb_behav xil_defaultlib.PWM_Decoder_tb -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programas/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot PWM_Decoder_tb_behav xil_defaultlib.PWM_Decoder_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.PWM_Decoder [pwm_decoder_default]
+Compiling architecture behavioral of entity xil_defaultlib.pwm_decoder_tb
+Built simulation snapshot PWM_Decoder_tb_behav
+
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Decoder_tb/behav/xsim/xsim.dir/PWM_Decoder_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue May  3 20:08:09 2022...
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/GitHubTFG/TFG/Programacion/Main/Decoder_HALLPWM/Decoder_HALLPWM.sim/PWM_Decoder_tb/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "PWM_Decoder_tb_behav -key {Behavioral:PWM_Decoder_tb:Functional:PWM_Decoder_tb} -tclbatch {PWM_Decoder_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source PWM_Decoder_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'PWM_Decoder_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1090.773 ; gain = 0.000
+run 50 ms
+run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 1090.773 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue May  3 23:13:45 2022...

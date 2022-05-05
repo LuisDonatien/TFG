@@ -15,6 +15,7 @@ architecture Behavioral of PWM_Decoder_tb is
     signal C          :  std_logic;
     signal CLK        :  std_logic;
     signal PWM_INH    :  std_logic;
+    signal PWM_INL    :  std_logic;  
     signal PWM_AH       :  std_logic;
     signal PWM_AL       :  std_logic;
     signal PWM_BH       :  std_logic;
@@ -31,6 +32,7 @@ Port(
     C          : in std_logic;
     CLK        : in std_logic;
     PWM_INH    : in std_logic;
+    PWM_INL    : in std_logic;
     PWM_AH       : out std_logic;
     PWM_AL       : out std_logic;
     PWM_BH       : out std_logic;
@@ -54,6 +56,7 @@ uut: PWM_Decoder PORT MAP(
     C       =>C,
     CLK     =>CLK,
     PWM_INH =>PWM_INH,
+    PWM_INL =>PWM_INL,
     PWM_AH  =>PWM_AH,
     PWM_AL  =>PWM_AL,
     PWM_BH  =>PWM_BH,
@@ -86,13 +89,12 @@ RESET<='1', '0' after 1ms, '1' after 1ms + 200 ns, '0' after 2 ms, '1' after 13 
 
  clockA : process
     begin 
-        
+PWM_INL<='0';        
         As <= '0';
         wait for 0.5*PERIOD;
         As <= '1' ;
         wait for 0.5*PERIOD;
 end process;
-
 ---clockB
 B<=transport A after 2*(PERIOD/6) ;
 ---clockC

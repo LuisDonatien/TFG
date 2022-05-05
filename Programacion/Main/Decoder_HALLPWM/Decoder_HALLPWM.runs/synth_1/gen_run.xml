@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1650991244">
-  <File Type="PA-TCL" Name="Top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Top_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="Top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="Top.vds"/>
-  <File Type="RDS-UTIL" Name="Top_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Top_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="Top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Top_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1651667225">
+  <File Type="PA-TCL" Name="TOP_VP.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="TOP_VP_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="TOP_VP_reports.tcl"/>
+  <File Type="RDS-RDS" Name="TOP_VP.vds"/>
+  <File Type="RDS-UTIL" Name="TOP_VP_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="TOP_VP_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="TOP_VP.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="TOP_VP_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="TOP_VP_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../sources_1/PID_TIMER.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../sources_1/PID_TOPSENSOR.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../sources_1/TOP_VP.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../sources_1/CLOCK_DISPLAY.vhd">
       <FileInfo>
         <Attr Name="Library" Val="xil_defaultlib"/>
@@ -126,13 +147,21 @@
     <File Path="$PPRDIR/../sources_1/Top.vhd">
       <FileInfo>
         <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../sources_1/PID_HALLFSM.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Top"/>
+      <Option Name="TopModule" Val="TOP_VP"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -155,9 +184,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

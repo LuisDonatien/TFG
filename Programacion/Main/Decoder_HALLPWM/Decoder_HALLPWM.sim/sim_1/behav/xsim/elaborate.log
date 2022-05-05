@@ -1,0 +1,5 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programas/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 30526ff7a2d74006b4c77b280cb2f79d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Top_behav xil_defaultlib.Top -log elaborate.log 
+Using 2 slave threads.
+ERROR: [XSIM 43-3225] Cannot find design unit xil_defaultlib.Top in library work located at xsim.dir/work.

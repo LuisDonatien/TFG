@@ -1,0 +1,26 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../sources_1/PID_TIMER.vhd" \
+"../../../../../sources_1/PID_TOPSENSOR.vhd" \
+"../../../../../sources_1/TOP_VP.vhd" \
+"../../../../../sources_1/CLOCK_DISPLAY.vhd" \
+"../../../../../sources_1/CntSteps_HALL.vhd" \
+"../../../../../sources_1/Compare.vhd" \
+"../../../../../sources_1/ConvertBCD.vhd" \
+"../../../../../sources_1/Counter_HALL.vhd" \
+"../../../../../sources_1/Decoder_Display.vhd" \
+"../../../../../sources_1/FSM_HALL.vhd" \
+"../../../../../sources_1/Filter_HALL.vhd" \
+"../../../../../sources_1/PWM_Decoder.vhd" \
+"../../../../../sources_1/PWM_Generator.vhd" \
+"../../../../../sources_1/SEGMENT_TOP.vhd" \
+"../../../../../sources_1/SYNCHRNZR.vhd" \
+"../../../../../sources_1/TOP_RPS_DISPLAY.vhd" \
+"../../../../../sources_1/Temporizador.vhd" \
+"../../../../../sources_1/Top_PWM.vhd" \
+"../../../../../sources_1/top_s.vhd" \
+"../../../../../sources_1/PID_HALLFSM.vhd" \
+"../../../../../sim/sim_1/new/PWM_Generator_tb.vhd" \
+
+# Do not sort compile order
+nosort

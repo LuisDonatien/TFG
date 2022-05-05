@@ -1,0 +1,25 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/GitHubTFG/TFG/Programacion/Main/sim/sim_1/new/PWM_Generator_tb.vhd,1650926012,vhdl,,,,pwm_generator_tb,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/CLOCK_DISPLAY.vhd,1650389344,vhdl,,,,clock_display,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/CntSteps_HALL.vhd,1650383197,vhdl,,,,cntsteps_hall,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/Compare.vhd,1650383548,vhdl,,,,compare,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/ConvertBCD.vhd,1648663467,vhdl,,,,convertbcd,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/Counter_HALL.vhd,1650303793,vhdl,,,,counter_hall,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/Decoder_Display.vhd,1648659371,vhdl,,,,decoder_display,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/FSM_HALL.vhd,1647538480,vhdl,,,,fsm_hall,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/Filter_HALL.vhd,1650456163,vhdl,,,,filter_hall,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_HALLFSM.vhd,1651503901,vhdl,,,,pid_hallfsm,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_TIMER.vhd,1651507788,vhdl,,,,pid_timer,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/PID_TOPSENSOR.vhd,1651508799,vhdl,,,,pid_topsensor,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Decoder.vhd,1650991214,vhdl,,,,pwm_decoder,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/PWM_Generator.vhd,1651600285,vhdl,,,,pwm_generator,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/SEGMENT_TOP.vhd,1650385455,vhdl,,,,segment_top,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/SYNCHRNZR.vhd,1647193902,vhdl,,,,synchrnzr,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_RPS_DISPLAY.vhd,1650390218,vhdl,,,,top_rps_display,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/TOP_VP.vhd,1651510972,vhdl,,,,top_vp,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/Temporizador.vhd,1650301511,vhdl,,,,temporizador,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/Top_PWM.vhd,1650904872,vhdl,,,,top_pwm,,,,,,,,
+C:/GitHubTFG/TFG/Programacion/Main/sources_1/top_s.vhd,1650821013,vhdl,,,,top_s,,,,,,,,

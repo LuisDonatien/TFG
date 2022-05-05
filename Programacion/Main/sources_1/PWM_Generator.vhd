@@ -61,6 +61,7 @@ begin
 end process;
 
 PWM_H<=counter_DelayH(DeadBand);
+--PWM_H<=PWM;
 PWM_L<=counter_DelayL(DeadBand);
 --PWM_L<='0';
 
