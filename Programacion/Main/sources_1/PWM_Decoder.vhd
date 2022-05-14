@@ -21,6 +21,8 @@ Port(
     PWM_BL       : out std_logic;
     PWM_CH       : out std_logic;
     PWM_CL       : out std_logic;
+    PWM_HIGH     : out std_logic;
+    PWM_LOW      : out std_logic;
     ERROR      : out std_logic
 );
 end PWM_Decoder;
@@ -147,6 +149,8 @@ begin
     PWM_BL  <='0';
     PWM_CH  <='0';
     PWM_CL  <='0'; 
+    PWM_HIGH <=PWM_INH;
+    PWM_LOW <= PWM_INL;
 ----------------------------
 ----------------------------
 

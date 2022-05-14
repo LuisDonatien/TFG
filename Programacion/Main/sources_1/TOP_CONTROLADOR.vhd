@@ -1,12 +1,11 @@
-library IEEE;--12
+library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-entity TOP_VP is
+entity TOP_CONTROLADOR  is
   Generic(
     PWM_Frecuencies: integer range 1000 to 2500:= 1000;
     PWM_DeadBand: integer range 3 to 10:=3;
-    Delay_States: integer range 4 to 10:=4;  
-    TIMES: integer range 1 to 100:= 50
+    SAMPLES: integer range 1 to 100:= 50
   );
   Port ( 
     CLK:          in std_logic;
@@ -17,10 +16,12 @@ entity TOP_VP is
     A_out       : out std_logic;
     B_out       : out std_logic;
     C_out       : out std_logic;
-    A_PMOD      : out std_logic;
-    B_PMOD      : out std_logic;
-    C_PMOD      : out std_logic;
-    Switch     : in std_logic_vector(10 downto 0);
+    --A_PMOD      : out std_logic;
+    --B_PMOD      : out std_logic;
+    --C_PMOD      : out std_logic;
+    --Switch     : in std_logic_vector(10 downto 0);
+    Set_Point    : in std_logic_vector(19 downto 0);
+    PROPORTIONAL : in std_logic_vector(15 downto 0);
     PWM_AH       : out std_logic;
     PWM_AL       : out std_logic;
     PWM_BH       : out std_logic;
@@ -34,9 +35,9 @@ entity TOP_VP is
     Segment: out std_logic_vector(6 downto 0);
     Display: out std_logic_vector(3 downto 0) 
   );
-end TOP_VP;
+end TOP_CONTROLADOR ;
 
-architecture Behavioral of TOP_VP is
+architecture Behavioral of TOP_CONTROLADOR is
 COMPONENT Top_PWM
 Generic(
     Frecuencies: integer range 1000 to 2500:= 1000;
@@ -162,7 +163,7 @@ uut4: TOP_RPS_DISPLAY PORT MAP(
 );
 
 uut5: TOP_PID GENERIC MAP(
-  TIMES =>TIMES
+  TIMES =>SAMPLES
 )
 PORT MAP(
     CLK        =>CLK,
@@ -170,8 +171,8 @@ PORT MAP(
     A          =>As,
     B          =>Bs,
     C          =>Cs,
-    Set_Point     =>Set_Point_s,
-    Proportional  =>Proportional_s,
+    Set_Point     =>Set_Point,
+    Proportional  =>Proportional,
     Output  =>Duty_ss,
     ERROR   =>ERROR_ss
   );
@@ -187,19 +188,19 @@ PORT MAP(
 A_out<=As;
 B_out<=Bs;
 C_out<=Cs;
-A_PMOD<=As;
-B_PMOD<=Bs;
-C_PMOD<=Cs;
+--A_PMOD<=As;
+--B_PMOD<=Bs;
+--C_PMOD<=Cs;
 HALL_s(0)<=As;
 HALL_s(1)<=Bs;
 HALL_s(2)<=Cs;
-Proportional_s<="00000000" & Switch(7 downto 0);
+--Proportional_s<="00000000" & Switch(7 downto 0);
 Duty_s(31 downto 10)<=(others=>'0');
 Duty_s(9 downto 0)<=Duty_ss;
 Duty_Led<=Duty_ss;
 
-Set_Point_s<=std_logic_vector(to_unsigned(83333,20)) when Switch(10 downto 8)="100"else
-            std_logic_vector(to_unsigned(125000,20)) when  Switch(10 downto 8)="010"else
-            std_logic_vector(to_unsigned(166666,20)) when  Switch(10 downto 8)="001"else
-            std_logic_vector(to_unsigned(125000,20));
+--Set_Point_s<=std_logic_vector(to_unsigned(83333,20)) when Switch(10 downto 8)="100"else
+          --  std_logic_vector(to_unsigned(125000,20)) when  Switch(10 downto 8)="010"else
+          --  std_logic_vector(to_unsigned(166666,20)) when  Switch(10 downto 8)="001"else
+          --  std_logic_vector(to_unsigned(125000,20));
 end Behavioral;

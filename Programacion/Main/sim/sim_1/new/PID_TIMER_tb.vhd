@@ -20,7 +20,7 @@ COMPONENT PID_TIMER
 END COMPONENT;
 
     constant CLK_PERIOD : time := 1 sec / 100_000_000; --Clock period 100MHz  
-    constant STEPs: time :=500ms;--6ms+944us; --Clock period PWM
+    constant STEPs: time :=1ms + 602us;--6ms+944us; --Clock period PWM
 begin
 
 uut_PIDTime: PID_TIMER PORT MAP(
@@ -47,7 +47,6 @@ begin
          Input<='0';
     wait for (STEPs/2);
 end process;
-
 RESET<='1', '0' after 1ms, '1' after 1ms + 200 ns, '0' after 2 ms, '1' after 13 ms ,'0' after 13ms + 20ns;
 
  

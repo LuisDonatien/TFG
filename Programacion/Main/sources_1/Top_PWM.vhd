@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Top_PWM is
 Generic(
-    Frecuencies: integer range 1000 to 2500:= 1000;
+    Frecuencies: integer range 1000 to 2500:= 2000;
     DeadBand: integer range 3 to 10:=3;
     Delay_States: integer range 4 to 10:=4
 );
@@ -21,6 +21,8 @@ Generic(
     PWM_BL       : out std_logic;
     PWM_CH       : out std_logic;
     PWM_CL       : out std_logic;
+    PWM_HIGH    : out std_logic;
+    PWM_LOW     : out std_logic;
     ERROR      : out std_logic
 );
 end Top_PWM;
@@ -44,6 +46,8 @@ Port(
     PWM_BL       : out std_logic;
     PWM_CH       : out std_logic;
     PWM_CL       : out std_logic;
+    PWM_HIGH     : out std_logic;
+    PWM_LOW      : out std_logic;
     ERROR      : out std_logic
 );
 END COMPONENT;
@@ -81,6 +85,8 @@ uut_PWM_Decoder: PWM_Decoder PORT MAP(
     PWM_BL      =>PWM_BL,
     PWM_CH      =>PWM_CH,
     PWM_CL      =>PWM_CL,
+    PWM_HIGH    =>PWM_HIGH,
+    PWM_LOW     =>PWM_LOW,
     ERROR       =>ERROR
 );
 
@@ -97,4 +103,7 @@ PORT MAP(
   PWM_H         =>PWM_Hs,
   PWM_L         =>PWM_Ls
 );
+--Salidas comprobacion de PWM
+--PWM_HIGH<=PWM_Hs;
+--PWM_LOW<=PWM_Ls;
 end Behavioral;

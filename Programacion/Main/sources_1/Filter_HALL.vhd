@@ -4,7 +4,7 @@ use IEEE.std_logic_arith.all;
  
 entity Filter_HALL is
   Generic(
-  Delay: integer:= 1            -- Delay*10^3
+  Delay: integer:= 10           -- Delay*10^3
   );
   Port ( 
   CLK: in std_logic;
