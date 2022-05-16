@@ -7,10 +7,10 @@ entity Top_PWM_tb is
 end Top_PWM_tb;
 
 architecture Behavioral of Top_PWM_tb is
+constant Duty_SIZE: integer:=10;
     signal CLK:           std_logic;
-    signal ENABLE_DUAL:   std_logic;
     signal RESET:         std_logic;
-    signal Duty:          std_logic_vector(32-1 downto 0);
+    signal Duty:          std_logic_vector(Duty_SIZE-1 downto 0);
     signal A,As,Ass          :  std_logic;
     signal B          :  std_logic;
     signal C          :  std_logic;
@@ -24,15 +24,15 @@ architecture Behavioral of Top_PWM_tb is
     
 COMPONENT Top_PWM
 Generic(
-    Frecuencies: integer range 1000 to 2500:= 2000;
+    Frecuencies: integer range 1000 to 2500:= 1000;
     DeadBand: integer range 3 to 10:=3;
+    BIPOLAR: boolean:=TRUE;
     Delay_States: integer range 4 to 10:=4
 );
   Port ( 
     CLK:          in std_logic;
-    ENABLE_DUAL:  in std_logic;
     RESET:        in std_logic;
-    Duty:         in std_logic_vector(32-1 downto 0);
+    Duty:         in std_logic_vector(Duty_SIZE-1 downto 0);
     A          : in std_logic;
     B          : in std_logic;
     C          : in std_logic;
@@ -54,7 +54,6 @@ begin
 uut: Top_PWM 
 PORT MAP(
     CLK             =>CLK,
-    ENABLE_DUAL     =>ENABLE_DUAL,
     RESET           =>RESET,
     Duty            =>Duty,
     A               =>A,
@@ -80,10 +79,10 @@ begin
     wait for (CLK_PERIOD/2);
 end process;
 
-RESET<='0', '1' after 1ms, '1' after 1ms + 200 ns, '0' after 2 ms, '1' after 12 ms ,'0' after 12ms + 300ns;
+RESET<='1', '0' after 1ms, '1' after 1ms + 200 ns, '0' after 2 ms, '1' after 13 ms ,'0' after 13ms + 20ns;
 
-ENABLE_DUAL<='0';
-Duty<=std_logic_vector(to_unsigned(800,32)),std_logic_vector(to_unsigned(400,32)) after 8ms +986 us,std_logic_vector(to_unsigned(2000,32)) after 12ms + 500ns, std_logic_vector(to_unsigned(0,32)) after 16ms + 500ns, std_logic_vector(to_unsigned(1500,32)) after 18ms + 500ns ;
+Duty<=std_logic_vector(to_unsigned(400,Duty_SIZE)),std_logic_vector(to_unsigned(1000,Duty_SIZE)) after 10ms +986 us,std_logic_vector(to_unsigned(500,Duty_SIZE)) after 12ms + 500ns, std_logic_vector(to_unsigned(0,Duty_SIZE)) after 17ms + 350us+10ns, 
+std_logic_vector(to_unsigned(1000,Duty_SIZE)) after 17ms +380us , std_logic_vector(to_unsigned(5,Duty_SIZE)) after 18ms + 500ns ,std_logic_vector(to_unsigned(500,Duty_SIZE)) after 20ms + 500ns ;
 
  clockA : process
     begin 

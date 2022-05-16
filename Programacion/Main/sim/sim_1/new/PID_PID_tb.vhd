@@ -7,25 +7,39 @@ entity PID_PID_tb is
 end PID_PID_tb;
 
 architecture Behavioral of PID_PID_tb is
+  constant Duty_SIZE:integer range 10 to 12:=10;
+  constant KP: integer range 0 to 255:=10;
+  constant KI: integer range 0 to 255:=0;
     signal CLK:     std_logic;
     signal RESET:   std_logic;
     signal Enable:  std_logic;
     signal Sensor :  std_logic_vector(19 downto 0);
-    signal Set_Point:   std_logic_vector(19 downto 0);
-    signal Proportional:  std_logic_vector(15 downto 0);
-    signal Output:  std_logic_vector(9 downto 0);
+    signal ExternalP:  std_logic;
+    signal ExternalI:  std_logic;
+    signal Set_Point:  std_logic_vector(19 downto 0);
+    signal Proportional:  std_logic_vector(7 downto 0);
+    signal Integral    :  std_logic_vector(7 downto 0);
+    signal Output:  std_logic_vector(Duty_SIZE-1 downto 0);
 --Referencia para simular---
 signal set_s:  std_logic_vector(15 downto 0);
 signal sensor_s:  std_logic_vector(15 downto 0);
 COMPONENT PID_PID
+GENERIC (
+  Duty_SIZE:integer range 10 to 12:=10;
+  KP: integer range 0 to 255:=10;
+  KI: integer range 0 to 255:=0
+);
 PORT(
     CLK:    in std_logic;
     RESET:  in std_logic;
     Enable: in std_logic;
     Sensor : in std_logic_vector(19 downto 0);
+    ExternalP: in std_logic;
+    ExternalI: in std_logic;
     Set_Point:  in std_logic_vector(19 downto 0);
-    Proportional: in std_logic_vector(15 downto 0);
-    Output: out std_logic_vector(9 downto 0)
+    Proportional: in std_logic_vector(7 downto 0);
+    Integral    : in std_logic_vector(7 downto 0);
+    Output: out std_logic_vector(Duty_SIZE-1 downto 0)
 );
 END COMPONENT;
 
@@ -38,8 +52,11 @@ uut_PID: PID_PID PORT MAP(
     RESET   =>RESET,
     Enable  =>Enable,
     Sensor  =>Sensor,
+    ExternalP =>ExternalP,
+    ExternalI =>ExternalI,
     Set_Point   =>Set_Point,
     Proportional =>Proportional,
+    Integral     =>Integral,
     Output      =>Output
 );
 --Generacion señales-----
@@ -66,5 +83,8 @@ SET_POINT<=conv_std_logic_vector(166666, 20),conv_std_logic_vector(52083,20) aft
 Sensor<=conv_std_logic_vector(166661, 20),conv_std_logic_vector(166666, 20) after 1ms+400ns , conv_std_logic_vector(144400,20) after 2ms, (others=>'1') after 3ms, conv_std_logic_vector(186266,20) after 3ms+ 30 ns, conv_std_logic_vector(135200,20) after 3ms+ 70 ns, conv_std_logic_vector(165562,20) after 3ms+ 110 ns ;
 set_s<=SET_POINT(19 downto 4);
 sensor_s<=SENSOR(19 downto 4);
-Proportional<=conv_std_logic_vector(40, 16);
+Proportional<=conv_std_logic_vector(40, 8);
+EXTERNALP<='0';
+EXTERNALI<='0';
+INTEGRAL<=(others=>'0');
 end Behavioral;
