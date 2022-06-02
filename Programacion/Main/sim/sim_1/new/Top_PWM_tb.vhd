@@ -14,6 +14,7 @@ constant Duty_SIZE: integer:=10;
     signal A,As,Ass          :  std_logic;
     signal B          :  std_logic;
     signal C          :  std_logic;
+    signal Sentido    :  std_logic;
     signal PWM_AH       :  std_logic;
     signal PWM_AL       :  std_logic;
     signal PWM_BH       :  std_logic;
@@ -36,6 +37,7 @@ Generic(
     A          : in std_logic;
     B          : in std_logic;
     C          : in std_logic;
+    Sentido    : in std_logic;
     PWM_AH       : out std_logic;
     PWM_AL       : out std_logic;
     PWM_BH       : out std_logic;
@@ -59,6 +61,7 @@ PORT MAP(
     A               =>A,
     B               =>B,
     C               =>C,
+    Sentido         =>Sentido,
     PWM_AH          =>PWM_AH,
     PWM_AL          =>PWM_AL,
     PWM_BH          =>PWM_BH,
@@ -98,6 +101,6 @@ B<=transport A after 2*(PERIOD/6) ;
 ---clockC
 C<= transport A after 4*(PERIOD/6);
 A<=As OR Ass;
-
+Sentido<='0','1'after 50 ms ,'0' after 100ms;
 Ass<='0','1' after 10ms , '0' after 12ms+30 ns; --Modificar señal buscando el error
 end architecture;

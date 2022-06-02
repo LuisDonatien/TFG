@@ -42,7 +42,7 @@ begin
     previnput<=SYNC_OUT_s;
         if previnput/=SYNC_OUT_s then
             count<=(others=>'0');
-        elsif unsigned(count)> conv_unsigned(Delay*1E1,32)-1 then
+        elsif unsigned(count)> conv_unsigned(Delay,32)-1 then
             OUTPUT<=SYNC_OUT_s;
         else
             count<=unsigned(count)+1;

@@ -9,7 +9,7 @@ end PID_PID_tb;
 architecture Behavioral of PID_PID_tb is
   constant Duty_SIZE:integer range 10 to 12:=10;
   constant KP: integer range 0 to 255:=10;
-  constant KI: integer range 0 to 255:=0;
+  constant KI: integer range 0 to 255:=1;
     signal CLK:     std_logic;
     signal RESET:   std_logic;
     signal Enable:  std_logic;
@@ -27,7 +27,7 @@ COMPONENT PID_PID
 GENERIC (
   Duty_SIZE:integer range 10 to 12:=10;
   KP: integer range 0 to 255:=10;
-  KI: integer range 0 to 255:=0
+  KI: integer range 0 to 255:=4
 );
 PORT(
     CLK:    in std_logic;
@@ -77,7 +77,7 @@ begin
     wait for (CLK_ENABLE/2);
 end process;
 
-RESET<='1', '0' after 1ms, '1' after 1ms + 200 ns, '0' after 2 ms, '1' after 13 ms ,'0' after 13ms + 20ns;
+RESET<='1', '0' after 1ms, '1' after 1ms + 200 ns, '0' after 2 ms,'1' after 3ms ,'0' after 3ms+20ns, '1' after 13 ms ,'0' after 13ms + 20ns;
 
 SET_POINT<=conv_std_logic_vector(166666, 20),conv_std_logic_vector(52083,20) after 4ms ;
 Sensor<=conv_std_logic_vector(166661, 20),conv_std_logic_vector(166666, 20) after 1ms+400ns , conv_std_logic_vector(144400,20) after 2ms, (others=>'1') after 3ms, conv_std_logic_vector(186266,20) after 3ms+ 30 ns, conv_std_logic_vector(135200,20) after 3ms+ 70 ns, conv_std_logic_vector(165562,20) after 3ms+ 110 ns ;

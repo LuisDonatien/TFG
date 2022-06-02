@@ -6,13 +6,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity CLOCK_DISPLAY is
   Port ( 
   CLK: in std_logic;
-  STEP: out std_logic
+  STEP: out std_logic_vector(1 downto 0)
   );
 end CLOCK_DISPLAY;
 
 architecture Behavioral of CLOCK_DISPLAY is
-signal Frecuencia: unsigned(31 downto 0):=conv_unsigned(16E5,32);
-signal Mitad: unsigned(31 downto 0):=conv_unsigned(8E5,32);
+signal Frecuencia: integer:=16E5;
+signal Cuarto: integer:=4E5;
 signal counter: unsigned(31 downto 0):=(others=>'0');
 begin
 
@@ -20,12 +20,16 @@ Reloj: process(CLK)
 begin
     if rising_edge(CLK) then
     counter<=counter+1;
-        if counter<Frecuencia AND counter>Mitad then
-            STEP<='0';
-        elsif counter<=Mitad then
-            STEP<='1';
-        elsif counter>=Frecuencia then
-            counter<=(others=>'0');      
+        if counter<cuarto then
+            STEP<="00";        
+        elsif counter<2*Cuarto AND counter>=Cuarto  then
+            STEP<="01";
+        elsif counter>=2*Cuarto AND counter<3*Cuarto then
+            STEP<="10";
+        elsif counter<Frecuencia AND counter>=3*Cuarto then
+            STEP<="11";
+        else
+            counter<=(others=>'0');     
         end if;
     end if;
 end process;

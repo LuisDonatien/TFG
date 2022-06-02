@@ -15,6 +15,7 @@ Port(
     CLK        : in std_logic;
     PWM_INH    : in std_logic;
     PWM_INL    : in std_logic;
+    Sentido    : in std_logic;
     PWM_AH       : out std_logic;
     PWM_AL       : out std_logic;
     PWM_BH       : out std_logic;
@@ -29,12 +30,12 @@ end PWM_Decoder;
 
 architecture Behavioral of PWM_Decoder is
 	type estate_t is (S0_101,S1_100,S2_110,S3_010,S4_011,S5_001,S6_ERROR);                            --Posible state of hall reception
-    signal   estate , nxt_estate : estate_t:=S6_ERROR;
-    signal delay: unsigned(8 downto 0);
-    signal delay_L: std_logic;
+    signal      estate , nxt_estate : estate_t:=S6_ERROR;
+    signal      Sentido_s,Flag_Cambio,Horario:std_logic;                --Registro almacena el valor de sentido para poder comparar.
+    signal      Contador_Cambio: std_logic_vector(17 downto 0);
 begin
 
-estate_register : process(CLK,RESET)
+estate_register : process(CLK)
     begin   
     if rising_edge(CLK) then 	
         if RESET = '1' then
@@ -51,18 +52,30 @@ estate_register : process(CLK,RESET)
             elsif A='0' AND B='0' AND C='1' then
                 estate <= S5_001;
             end if;       
-
-            delay<=(others=>'0');
+            Sentido_s<=Sentido;
+            horario<=Sentido;
+            Contador_Cambio<=(others=>'0');
+            Flag_Cambio<='0';
         else
       --To save the actual state in case of a change in nxt_state.                  
     	estate<= nxt_estate;  --Notify change state.           
-        --    if nxt_estate/=estate then
-        --        delay<=to_unsigned(Delay_States,9);
-        --    elsif delay>0 then
-        --        delay<=delay-1;
-        --    else
-        --        delay<=(others=>'0');
-        --    end if;      
+    
+      --Cambio de sentido--
+      --Se va a realizar un delay de cambio de sentido a fin de poder asegurar el cierre de los transistores del puente y una reduccion de la velocidad del rotor.
+      ---------------------
+      if Sentido/=Sentido_s then
+           Flag_Cambio<='1';
+           Sentido_s<=Sentido;
+      end if;
+      
+      ---------Contador de retardo cambio de sentido-----------------               Se da 1 ms para realizar el cambio de sentido.
+        if Flag_Cambio='1' AND unsigned(Contador_Cambio)<TO_UNSIGNED(1E5,18) then
+            Contador_Cambio<=std_logic_vector(unsigned(Contador_Cambio) + 1);
+        elsif unsigned(Contador_Cambio)>=TO_UNSIGNED(1E5,18) AND Flag_Cambio='1' then
+            Contador_Cambio<=(others=>'0');
+            Flag_Cambio<='0';
+        end if;
+      -----------------------   
         end if;
    	end if;
    end process;
@@ -139,7 +152,7 @@ estate_register : process(CLK,RESET)
    
    
    
-combinational_output: process(RESET,estate,delay,PWM_INH,PWM_INL)               --S0_101,S1_100,S2_110,S3_010,S4_011,S5_001,S6_ERROR
+combinational_output: process(RESET,Flag_Cambio,Sentido_s,estate,PWM_INH,PWM_INL)               --S0_101,S1_100,S2_110,S3_010,S4_011,S5_001,S6_ERROR
 begin
 --Evitar latch en la salida
     ERROR<='0';
@@ -170,63 +183,115 @@ begin
     PWM_CL  <='0';  
     --Error--
     ERROR<='1';
---    elsif delay>0 then
---    PWM_AH  <='0';
---    PWM_AL  <='0';
---    PWM_BH  <='0';
---    PWM_BL  <='0';
---    PWM_CH  <='0';
---    PWM_CL  <='0';     
-    
-    elsif estate=S0_101 then
-    PWM_AH  <='0';
-    PWM_AL  <='0';
-    PWM_BH  <=PWM_INH;
-    PWM_BL  <=PWM_INL;
-    PWM_CH  <='0';
-    PWM_CL  <='1';     
-    
-    elsif estate=S1_100 then
-    PWM_AH  <='0';
-    PWM_AL  <='1';
-    PWM_BH  <=PWM_INH;
-    PWM_BL  <=PWM_INL;
-    PWM_CH  <='0';
-    PWM_CL  <='0';    
-    
-    elsif estate=S2_110 then
-    PWM_AH  <='0';
-    PWM_AL  <='1';
-    PWM_BH  <='0';
-    PWM_BL  <='0';
-    PWM_CH  <=PWM_INH;
-    PWM_CL  <=PWM_INL;     
-    
-    elsif estate=S3_010 then
+  
+    elsif Flag_Cambio='1' then
     PWM_AH  <='0';
     PWM_AL  <='0';
     PWM_BH  <='0';
-    PWM_BL  <='1';
-    PWM_CH  <=PWM_INH;
-    PWM_CL  <=PWM_INL;    
-     
-    elsif estate=S4_011 then
-    PWM_AH  <=PWM_INH;
-    PWM_AL  <=PWM_INL;
-    PWM_BH  <='0';
-    PWM_BL  <='1';
-    PWM_CH  <='0';
-    PWM_CL  <='0';    
-     
-    elsif estate=S5_001 then
-    PWM_AH  <=PWM_INH;
-    PWM_AL  <=PWM_INL;
-    PWM_BH  <='0';
     PWM_BL  <='0';
     PWM_CH  <='0';
-    PWM_CL  <='1';      
+    PWM_CL  <='0';   
+    
+    elsif Sentido_s='0' then        --Combinaciones para sentido horario
+       
+            if estate=S0_101 then
+                PWM_AH  <='0';
+                PWM_AL  <='0';
+                PWM_BH  <=PWM_INH;
+                PWM_BL  <=PWM_INL;
+                PWM_CH  <='0';
+                PWM_CL  <='1';     
+    
+            elsif estate=S1_100 then
+                PWM_AH  <='0';
+                PWM_AL  <='1';
+                PWM_BH  <=PWM_INH;
+                PWM_BL  <=PWM_INL;
+                PWM_CH  <='0';
+                PWM_CL  <='0';    
+    
+            elsif estate=S2_110 then
+                PWM_AH  <='0';
+                PWM_AL  <='1';
+                PWM_BH  <='0';
+                PWM_BL  <='0';
+                PWM_CH  <=PWM_INH;
+                PWM_CL  <=PWM_INL;     
+    
+            elsif estate=S3_010 then
+                PWM_AH  <='0';
+                PWM_AL  <='0';
+                PWM_BH  <='0';
+                PWM_BL  <='1';
+                PWM_CH  <=PWM_INH;
+                PWM_CL  <=PWM_INL;    
+     
+            elsif estate=S4_011 then
+                PWM_AH  <=PWM_INH;
+                PWM_AL  <=PWM_INL;
+                PWM_BH  <='0';
+                PWM_BL  <='1';
+                PWM_CH  <='0';
+                PWM_CL  <='0';    
+     
+            elsif estate=S5_001 then
+                PWM_AH  <=PWM_INH;
+                PWM_AL  <=PWM_INL;
+                PWM_BH  <='0';
+                PWM_BL  <='0';
+                PWM_CH  <='0';
+                PWM_CL  <='1';      
+            end if;
+    elsif Sentido_s='1'  then           --Combinaciones para sentido horario
+    
+             if estate=S0_101 then
+                PWM_AH  <='0';
+                PWM_AL  <='0';
+                PWM_BH  <='0';
+                PWM_BL  <='1';
+                PWM_CH  <=PWM_INH;
+                PWM_CL  <=PWM_INL;     
+    
+            elsif estate=S1_100 then
+                PWM_AH  <=PWM_INH;
+                PWM_AL  <=PWM_INL;
+                PWM_BH  <='0';
+                PWM_BL  <='1';
+                PWM_CH  <='0';
+                PWM_CL  <='0';    
+    
+            elsif estate=S2_110 then
+                PWM_AH  <=PWM_INH;
+                PWM_AL  <=PWM_INL;
+                PWM_BH  <='0';
+                PWM_BL  <='0';
+                PWM_CH  <='0';
+                PWM_CL  <='1';     
+    
+            elsif estate=S3_010 then
+                PWM_AH  <='0';
+                PWM_AL  <='0';
+                PWM_BH  <=PWM_INH;
+                PWM_BL  <=PWM_INL;  
+                PWM_CH  <='0';
+                PWM_CL  <='1';    
+     
+            elsif estate=S4_011 then
+                PWM_AH  <='0';
+                PWM_AL  <='1';
+                PWM_BH  <=PWM_INH;
+                PWM_BL  <=PWM_INL;
+                PWM_CH  <='0';
+                PWM_CL  <='0';
+     
+            elsif estate=S5_001 then
+                PWM_AH  <='0';
+                PWM_AL  <='1';
+                PWM_BH  <='0';
+                PWM_BL  <='0';
+                PWM_CH  <=PWM_INH;
+                PWM_CL  <=PWM_INL;     
+            end if;   
     end if;
-    
-    
 end process;
 end architecture;

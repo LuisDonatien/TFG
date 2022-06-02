@@ -5,7 +5,7 @@ entity Top_PWM is
 Generic(
     Frecuencies: integer range 1000 to 2500:= 1000;
     DeadBand: integer range 3 to 10:=3;
-    BIPOLAR: boolean:=FALSE;
+    COMPLEMENTARIO  : boolean:=FALSE;
     Delay_States: integer range 4 to 10:=4;
     Duty_SIZE: integer range 10 to 12:=10
 );
@@ -16,6 +16,7 @@ Generic(
     A          : in std_logic;
     B          : in std_logic;
     C          : in std_logic;
+    Sentido    : in std_logic;
     PWM_AH       : out std_logic;
     PWM_AL       : out std_logic;
     PWM_BH       : out std_logic;
@@ -39,6 +40,7 @@ Port(
     B          : in std_logic;
     C          : in std_logic;
     CLK        : in std_logic;
+    Sentido    : in std_logic;
     PWM_INH    : in std_logic;
     PWM_INL    : in std_logic;
     PWM_AH       : out std_logic;
@@ -57,7 +59,7 @@ COMPONENT PWM_Generator
 Generic(
     Frecuencies: integer range 1000 to 2500:= 1000;
     DeadBand: integer range 3 to 10:=5;
-    BIPOLAR: boolean:=FALSE;
+    COMPLEMENTARIO  : boolean:=FALSE;
     Duty_SIZE: integer range 10 to 12:=10
 );
   Port ( 
@@ -79,6 +81,7 @@ uut_PWM_Decoder: PWM_Decoder PORT MAP(
     B           =>B,
     C           =>C,
     CLK         =>CLK,
+    Sentido     =>Sentido,
     PWM_INH     =>PWM_Hs,
     PWM_INL     =>PWM_Ls,
     PWM_AH      =>PWM_AH,
@@ -97,7 +100,7 @@ GENERIC MAP(
     Frecuencies =>Frecuencies,
     DeadBand    =>DeadBand,
     Duty_SIZE   =>Duty_SIZE,
-    BIPOLAR     =>BIPOLAR
+    COMPLEMENTARIO       =>COMPLEMENTARIO  
 )
 PORT MAP(
   CLK           =>CLK,

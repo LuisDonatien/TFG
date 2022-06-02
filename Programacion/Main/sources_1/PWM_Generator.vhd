@@ -9,7 +9,7 @@ Generic(
     Frecuencies: integer range 1000 to 2500:= 1000;
     DeadBand: integer range 3 to 10:=5;
     Duty_SIZE: integer range 10 to 12:=10;
-    BIPOLAR: boolean:=FALSE
+    COMPLEMENTARIO  : boolean:=FALSE
 );
   Port ( 
   CLK:          in std_logic;
@@ -36,7 +36,7 @@ begin
             counter_DelayH<=(others=>'0');
             counter_DelayL<=(others=>'0');
             counter_PWM<=to_unsigned(Frecuencies,Duty_Size);
-        elsif BIPOLAR=TRUE then
+        elsif COMPLEMENTARIO  =TRUE then
             if counter_PWM=to_unsigned(0,Duty_Size)+1 then      --Al llegar a 0 el contador Reset de contador e inicio de delay H para ponerse a 1
                 PWM<='1';
                 counter_PWM<=to_unsigned(Frecuencies,Duty_Size);
@@ -59,7 +59,7 @@ begin
                 counter_DelayH<=(others=>'0');
                 counter_DelayL<=counter_DelayL(DeadBand-1 downto 0) & '1';
             end if;
-        elsif BIPOLAR=FALSE then
+        elsif COMPLEMENTARIO  =FALSE then
             if counter_PWM=to_unsigned(0,Duty_Size)+1 then      --Al llegar a 0 el contador Reset de contador e inicio de delay H para ponerse a 1
                 PWM<='0';
                 counter_PWM<=to_unsigned(Frecuencies,Duty_Size);

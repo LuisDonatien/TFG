@@ -60,6 +60,7 @@ begin
             elsif flag_d='1' then
                 Count <= std_logic_vector(Valin_x_Constant(COUNT_SIZE+CONST_DIV_SIZE -1 downto Division));   
                 N_Average<="00" & Valin_x_Constant(COUNT_SIZE+CONST_DIV_SIZE -1 downto Division);  
+                --N_Average<=(others=>'0');
                 Flag_d<='0';
             end if;               
         end if;

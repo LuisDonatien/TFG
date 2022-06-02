@@ -6,7 +6,7 @@ entity PID_SAMPLE_tb is
 end PID_SAMPLE_tb;
 
 architecture Behavioral of PID_SAMPLE_tb is
-constant   TIMES: integer range 1 to 100:= 100;
+constant   TIMES: integer range 1 to 100:= 10;
   signal CLK:   std_logic;
   signal RESET: std_logic;
   signal Enable:std_logic;

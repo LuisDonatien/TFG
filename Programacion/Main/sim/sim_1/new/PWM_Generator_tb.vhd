@@ -9,8 +9,8 @@ entity PWM_Generator_tb is
 end PWM_Generator_tb;
 
 architecture Behavioral of PWM_Generator_tb is
-  constant Duty_SIZE: integer range 10 to 12:=12;
-  constant BIPOLAR: boolean:=TRUE;
+  constant Duty_SIZE: integer range 10 to 12:=10;
+  constant COMPLEMENTARIO: boolean:=TRUE;
   signal CLK:           std_logic;
   signal RESET:         std_logic;
   signal Duty:          std_logic_vector(Duty_SIZE-1 downto 0);
@@ -20,10 +20,10 @@ architecture Behavioral of PWM_Generator_tb is
 
 COMPONENT PWM_Generator
 Generic(
-    Frecuencies: integer range 1000 to 2500:= 2500;
+    Frecuencies: integer range 1000 to 2500:= 1000;
     DeadBand: integer range 3 to 10:=4;
-    BIPOLAR: boolean:=TRUE;
-    Duty_SIZE: integer range 10 to 12:=12
+    COMPLEMENTARIO: boolean:=FALSE;
+    Duty_SIZE: integer range 10 to 12:=10
 );
   Port ( 
   CLK:          in std_logic;
@@ -56,6 +56,6 @@ end process;
 
 RESET<='1', '0' after 1ms, '1' after 1ms + 200 ns, '0' after 2 ms, '1' after 13 ms ,'0' after 13ms + 20ns;
 
-Duty<=std_logic_vector(to_unsigned(400,Duty_SIZE)),std_logic_vector(to_unsigned(1000,Duty_SIZE)) after 10ms +986 us,std_logic_vector(to_unsigned(2501,Duty_SIZE)) after 12ms + 500ns, std_logic_vector(to_unsigned(0,Duty_SIZE)) after 17ms + 350us+10ns, 
-std_logic_vector(to_unsigned(1000,Duty_SIZE)) after 17ms +380us , std_logic_vector(to_unsigned(5,Duty_SIZE)) after 18ms + 500ns ,std_logic_vector(to_unsigned(500,Duty_SIZE)) after 20ms + 500ns ;
+Duty<=std_logic_vector(to_unsigned(400,Duty_SIZE)),std_logic_vector(to_unsigned(1000,Duty_SIZE)) after 10ms +986 us,std_logic_vector(to_unsigned(500,Duty_SIZE)) after 12ms + 500ns, std_logic_vector(to_unsigned(0,Duty_SIZE)) after 17ms + 350us+10ns, 
+std_logic_vector(to_unsigned(300,Duty_SIZE)) after 17ms +380us , std_logic_vector(to_unsigned(10,Duty_SIZE)) after 18ms + 500ns ,std_logic_vector(to_unsigned(500,Duty_SIZE)) after 20ms + 500ns ;
 end Behavioral;

@@ -20,7 +20,7 @@ COMPONENT PID_TIMER
 END COMPONENT;
 
     constant CLK_PERIOD : time := 1 sec / 100_000_000; --Clock period 100MHz  
-    constant STEPs: time :=1ms + 602us;--6ms+944us; --Clock period PWM
+    constant STEPs: time :=1ms + 602us;--6ms+944us; --Clock period FSM HALL
 begin
 
 uut_PIDTime: PID_TIMER PORT MAP(
@@ -40,7 +40,7 @@ begin
 end process;
 
 
-Generar_Reloj_PWM: process
+Generar_FSMHALL: process
 begin
          Input<='1';
     wait for (STEPs/2);

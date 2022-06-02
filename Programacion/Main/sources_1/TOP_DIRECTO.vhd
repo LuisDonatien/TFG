@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity TOP_LAZOABIERTO  is
+entity TOP_DIRECTO  is
   Generic(
     PWM_Frecuencies: integer range 1000 to 2500:= 1000;
     Duty_SIZE: integer range 10 to 12:=10;
@@ -15,11 +15,11 @@ entity TOP_LAZOABIERTO  is
     A          : in std_logic;
     B          : in std_logic;
     C          : in std_logic;
+    Sentido     :  in std_logic;
     Duty        : in std_logic_vector(Duty_SIZE-1 downto 0);
     A_out       : out std_logic;
     B_out       : out std_logic;
     C_out       : out std_logic;
-    Sentido     : in std_logic;
     PWM_AH       : out std_logic;
     PWM_AL       : out std_logic;
     PWM_BH       : out std_logic;
@@ -32,9 +32,9 @@ entity TOP_LAZOABIERTO  is
     Duty_Led   : out std_logic_vector(Duty_SIZE-1 downto 0);
     Count      : out std_logic_vector(19 downto 0)
   );
-end TOP_LAZOABIERTO  ;
+end TOP_DIRECTO  ;
 
-architecture Behavioral of TOP_LAZOABIERTO  is
+architecture Behavioral of TOP_DIRECTO  is
 COMPONENT Top_PWM
 Generic(
     Frecuencies: integer range 1000 to 2500:= 1000;
@@ -50,7 +50,7 @@ Generic(
     A          : in std_logic;
     B          : in std_logic;
     C          : in std_logic;
-    Sentido    : in std_logic;
+    Sentido     :  in std_logic;
     PWM_AH       : out std_logic;
     PWM_AL       : out std_logic;
     PWM_BH       : out std_logic;

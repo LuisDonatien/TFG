@@ -21,6 +21,7 @@ entity TOP_PID is
     Proportional: in std_logic_vector(7 downto 0);
     Integral    : in std_logic_vector(7 downto 0);
     Output: out std_logic_vector(Duty_SIZE-1 downto 0);
+    Count:  out std_logic_vector(19 downto 0);
     ERROR:  out std_logic
   );
 end TOP_PID;
@@ -112,4 +113,6 @@ uut_TOP_SENSOR: PID_TOPSENSOR PORT MAP(
   Count =>Sensor_s,
   ERROR =>ERROR
 );
+
+Count<=Sensor_s;
 end Behavioral;
