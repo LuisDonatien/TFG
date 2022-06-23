@@ -14,7 +14,7 @@ Organizacion de la carpeta de programación:
 	//Además contiene exportado en formato zip los proyectos en Vitis de las 2 demos (Directo y PI) para utilizar recomponga el zip desde la opción de importar proyecto en Vitis.
 -----
 -----SocNexys4
-	Contiene el mismo proyecto que para la Basys3 salvo con la placa de desarrollo nexys4 en este caso.
+	Contiene el mismo proyecto que para la Basys3 salvo con la placa de desarrollo nexys4 DDR en este caso.
 -----
 -----Pruebas
 	Contiene pruebas varias realizadas durante la creacion del TFG.
